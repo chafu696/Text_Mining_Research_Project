@@ -182,33 +182,13 @@ Each method has a graph to show the comparison on the four different models in o
 
 # 5 Discussion
 
-(1) Imbalanced data has the lowest accuracy and undersampling data ranks first in all models except Support Vector Machine. 
+The imbalanced data in this project is only processed by undersampling and oversampling. Undersampling data has the highest spam email classification accuracy among all the methods and models. Imbalanced data has the most serious influence on Logistic Regression and Random Forest in tf-idf and word embedding methods respectively. Concerning models, TextRNN(LSTM) and Support Vector Machine rank first in all three data compared with other models in word embedding and tf-idf methods respectively. Support vector machine with tf-idf method and undersampling data and TextRNN(LSTM) with word embedding and undersampling data both have the highest classification accuracy reaching 96%, although support vector machine is simpler than TextRNN(LSTM).
 
-(2) In word embedding method, TextRNN(LSTM) model ranks first in all three data compared with other ones. 
-
-(3) In tf-idf method, Support Vector Machine model ranks first in all three data compared with Logistic Regression and Random Forest.
-
-(4) In tf-idf method, Logistic Regression is the most sensitive to imbalanced data. 
-
-(5) In word embedding method, Random Forest is the most sensitive to imbalanced data. 
-
-(6) The _[solution](https://www.kaggle.com/lvalencia/get-rid-of-spam)_  based on the same data is published in kaggle. This solution used Natural Language ToolKit(NLTK) module. The spacy module is used in this project. 
-
-(7) The kaggle solution processes the original data by removing some information.  However, this process can lose some potentially important information. Hence, this project does not remove any information from the original data. Moreover, the kaggle solution only used original data(imbalanced data) and tf-idf method but three different data and two different methods are used in this project.
-
-(8) Support Vector Machine with tf-idf method and undersampling data in this project has the largest accuracy which is the same result as the kaggle solution reaching 96%.
-
-(9) Logistic Regression with tf-idf method and undersampling data in this project has slightly lower results than the kaggle solution(95% to 97%).
-
-(10) TextRNN(LSTM) with word embedding method and undersampling data in this project also has the largest accuracy reaching 96%.
+The best _[solution](https://www.kaggle.com/lvalencia/get-rid-of-spam)_ based on the same data is published in Kaggle. This solution processes the imbalanced data by removing some information. Unlike undersampling and oversampling, this process could take some human time. Although it applies Logistic Regression and Support Vector Machine models with the tf-idf method, a Neural Network learning system is not employed. The spam email classification accuracy reaches 97% and 96% in Logistic Regression and Support Vector Machine respectively which are almost the same as this project obtains.
 
 # 6 Conclusion
 
-(1) Undersampling can be used instead of the imbalanced one to obtain an optimal classification performance.
-
-(2) Although both undersampling and preprocess by removing information on original data can have equivalent performance based on the Support Vector Machine model
-, undersampling can save human time. 
-
-(3) Many steps should be applied to transform the data into a specific form that can be used in TextRNN(LSTM). Although both TextRNN(LSTM) and Support Vector Machine can perform on the same level in small data, the simple model, support vector machine should be an optimal selection.
+To overcome the limitation of spam email classification based on imbalanced data, this project compares many different methods and models. The results reveal that undersampling data transformed from imbalanced data could have the highest accuracy. Based on undersampling data, Support Vector Machine with tf-idf and TextRNN(LSTM) with word embedding both have the highest classification accuracy reaching 96%. According to the model complexity, the optimal spam email classification model is Support Vector Machine with tf-idf and undersampling data. Although the best solution for this problem published in Kaggle has the same result, it uses balanced data by the preprocess of removing much information manually by human which is time consuming and puts neural network model aside.
+This project does not pay attention to other neutral networks, such as TextCNN, bert which might have a better performance. More research could be done in the data preprocessing by both removing some information and undersampling which could have a better performance than a single method. Another limitation of this project is that the data does not contain large text which is common in practice. Future research can be spent on solving these limitations. 
 
 # 7 References
